@@ -12,30 +12,60 @@
             width: 100px; /* Ajustez la taille selon vos besoins */
             height: auto;
         }
+        .copy-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .copy-button:hover {
+            background-color: #0052a3;
+        }
     </style>
 </head>
 <body>
-<table style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; border-collapse: collapse;">
-    <tr>
-        <td style="vertical-align: middle; padding-right: 15px;">
-            <!-- Deux options pour intégrer le SVG -->
-            <!-- Option 1: En tant qu'image -->
-            <img src="images/sentosa-logo.svg" alt="Sentosa" class="logo" style="width: 100px; height: auto;">
+    <div id="signature">
+        <table style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; border-collapse: collapse;">
+            <tr>
+                <td style="vertical-align: middle; padding-right: 15px;">
+                    <img src="images/sentosa-logo.png" alt="Sentosa" class="logo" style="width: 100px; height: auto;">
+                </td>
+                <td style="width: 1px; background-color: black; padding: 0; height: 70px;"></td>
+                <td style="vertical-align: middle; padding-left: 15px;">
+                    <div style="font-family: Arial, sans-serif; font-weight: bold;">NICOLAS BOKSENBAUM</div>
+                    <div style="font-family: Arial, sans-serif; color: #666; margin-bottom: 5px;">_PARTNER</div>
+                    <div style="font-family: Arial, sans-serif;">
+                        M. +33 6 89 05 96 39<br>
+                        A. 33 AVENUE DE WAGRAM - PARIS 17<br>
+                        <a href="http://www.sentosa-re.com" style="color: #0066cc; text-decoration: none;">WWW.SENTOSA-RE.COM</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <button class="copy-button" onclick="copySignature()">Copier la signature</button>
 
-            <!-- Option 2: En important directement le SVG
-                 Pour cette option, je dois voir le contenu de votre SVG -->
-        </td>
-        <td style="width: 1px; background-color: black; padding: 0; height: 70px;"></td>
-        <td style="vertical-align: middle; padding-left: 15px;">
-            <div style="font-family: Arial, sans-serif; font-weight: bold;">NICOLAS BOKSENBAUM</div>
-            <div style="font-family: Arial, sans-serif; color: #666; margin-bottom: 5px;">_PARTNER</div>
-            <div style="font-family: Arial, sans-serif;">
-                M. +33 6 89 05 96 39<br>
-                A. 33 AVENUE DE WAGRAM - PARIS 17<br>
-                <a href="http://www.sentosa-re.com" style="color: #0066cc; text-decoration: none;">WWW.SENTOSA-RE.COM</a>
-            </div>
-        </td>
-    </tr>
-</table>
+    <script>
+        function copySignature() {
+            const signatureElement = document.getElementById('signature');
+            const range = document.createRange();
+            range.selectNode(signatureElement);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            
+            try {
+                document.execCommand('copy');
+                alert('Signature copiée avec succès !');
+            } catch (err) {
+                alert('Erreur lors de la copie : ' + err);
+            }
+            
+            window.getSelection().removeAllRanges();
+        }
+    </script>
 </body>
 </html>
