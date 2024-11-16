@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Signatures Sentosa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 20px;
@@ -77,6 +78,43 @@
             margin: 0;
             padding-left: 20px;
         }
+
+        /* Nouveaux styles pour les signatures */
+        .signature-table {
+            font-family: 'Space Grotesk', Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .signature-name {
+            font-family: 'Space Grotesk', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-size: 14px;
+        }
+
+        .signature-title {
+            font-family: 'Space Grotesk', Arial, sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        .signature-details {
+            font-family: 'Space Grotesk', Arial, sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            font-size: 12px;
+        }
+
+        .signature-website {
+            color: #0066cc;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -100,20 +138,21 @@
     <div class="signatures-container">
         <!-- Emmanuel -->
         <div class="signature-block">
-            <div id="signature-emmanuel" class="signature">
-                <table id="signatureTable-emmanuel" style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; border-collapse: collapse;">
+            <div class="signature">
+                <table id="signatureTable-emmanuel" class="signature-table">
                     <tr>
-                        <td style="vertical-align: middle; padding-right: 15px;">
-                            <img src="images/sentosa-logo.png" alt="Sentosa" class="logo" style="width: 100px; height: auto;">
+                        <td style="vertical-align: middle; padding-right: 15px; width: 100px;">
+                            <img src="images/sentosa-logo.png" alt="Sentosa" style="width: 100px; height: auto;">
+                            <div style="font-family: 'Space Grotesk', Arial, sans-serif; font-size: 14px; margin-top: 5px;">SENTOSA®</div>
                         </td>
                         <td style="width: 1px; background-color: black; padding: 0; height: 70px;"></td>
                         <td style="vertical-align: middle; padding-left: 15px;">
-                            <div style="font-family: Arial, sans-serif; font-weight: bold;">EMMANUEL DE LA VIGNE</div>
-                            <div style="font-family: Arial, sans-serif; color: #666; margin-bottom: 5px;">_PARTNER</div>
-                            <div style="font-family: Arial, sans-serif;">
+                            <div class="signature-name">EMMANUEL DE LA VIGNE</div>
+                            <div class="signature-title">_PARTNER</div>
+                            <div class="signature-details">
                                 M. +33 7 68 56 08 19<br>
                                 A. 33 AVENUE DE WAGRAM - PARIS 17<br>
-                                <a href="http://www.sentosa-re.com" style="color: #0066cc; text-decoration: none;">WWW.SENTOSA-RE.COM</a>
+                                <a href="http://www.sentosa-re.com" class="signature-website">WWW.SENTOSA-RE.COM</a>
                             </div>
                         </td>
                     </tr>
