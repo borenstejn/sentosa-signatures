@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Générateur de Signatures Sentosa</title>
+    <style>
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-container, .preview-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .generate-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .generate-button:hover {
+            background-color: #0052a3;
+        }
+
+        .preview-container {
+            display: none;
+        }
+
+        .signature {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+
+        .copy-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background-color: #0052a3;
+        }
+
+        .nav-links {
+            margin-bottom: 30px;
+        }
+
+        .nav-links a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="index.html">← Retour aux signatures</a>
+    </div>
+
+    <div class="form-container">
+        <h2>Générateur de signature</h2>
+        <form id="signatureForm" onsubmit="generateSignature(event)">
+            <div class="form-group">
+                <label for="name">Nom et Prénom</label>
+                <input type="text" id="name" required placeholder="ex: JEAN DUPONT">
+            </div>
+            <div class="form-group">
+                <label for="title">Titre</label>
+                <input type="text" id="title" required placeholder="ex: _PARTNER">
+            </div>
+            <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="text" id="phone" required placeholder="ex: +33 6 12 34 56 78">
+            </div>
+            <button type="submit" class="generate-button">Générer la signature</button>
+        </form>
+    </div>
+
+    <div id="previewContainer" class="preview-container">
+        <h2>Aperçu de la signature</h2>
+        <div id="signature" class="signature">
+            <table id="signatureTable" style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; border-collapse: collapse;">
+                <tr>
+                    <td style="vertical-align: middle; padding-right: 15px;">
+                        <img src="images/sentosa-logo.png" alt="Sentosa" style="width: 100px; height: auto;">
+                    </td>
+                    <td style="width: 1px; background-color: black; padding: 0; height: 70px;"></td>
+                    <td style="vertical-align: middle; padding-left: 15px;">
+                        <div id="previewName" style="font-family: Arial, sans-serif; font-weight: bold;"></div>
+                        <div id="previewTitle" style="font-family: Arial, sans-serif; color: #666; margin-bottom: 5px;"></div>
+                        <div style="font-family: Arial, sans-serif;">
+                            <span id="previewPhone"></span><br>
+                            A. 33 AVENUE DE WAGRAM - PARIS 17<br>
+                            <a href="http://www.sentosa-re.com" style="color: #0066cc; text-decoration: none;">WWW.SENTOSA-RE.COM</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <button class="copy-button" onclick="copySignature()">Copier la signature</button>
+    </div>
+
+    <script>
+        function generateSignature(event) {
+            event.preventDefault();
+            
+            // Récupérer les valeurs du formulaire
+            const name = document.getElementById('name').value.toUpperCase();
+            const title = document.getElementById('title').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Mettre à jour l'aperçu
+            document.getElementById('previewName').textContent = name;
+            document.getElementById('previewTitle').textContent = title;
+            document.getElementById('previewPhone').textContent = 'M. ' + phone;
+            
+            // Afficher le conteneur de l'aperçu
+            document.getElementById('previewContainer').style.display = 'block';
+        }
+
+        function copySignature() {
+            const signatureElement = document.getElementById('signatureTable');
+            const range = document.createRange();
+            range.selectNode(signatureElement);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            
+            try {
+                document.execCommand('copy');
+                alert('Signature copiée avec succès !');
+            } catch (err) {
+                alert('Erreur lors de la copie : ' + err);
+            }
+            
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+</html> 
