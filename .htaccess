@@ -1,0 +1,15 @@
+# Empêcher l'accès au répertoire
+Options -Indexes
+
+# Bloquer l'accès direct aux images
+<FilesMatch "\.(png|jpe?g|gif)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Autoriser les images seulement depuis votre domaine
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag "noindex, nofollow"
+    Header set X-Frame-Options "DENY"
+    Header set Content-Security-Policy "frame-ancestors 'none'"
+</IfModule> 
