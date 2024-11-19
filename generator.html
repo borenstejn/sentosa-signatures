@@ -222,31 +222,38 @@
         <div id="previewContainer" class="preview-container">
             <h2>Aperçu de la signature</h2>
             <div id="signature" class="signature">
-                <table id="signatureTable" cellspacing="0" cellpadding="0" border="0" style="width: 360px; min-width: 360px; max-width: 360px; margin: 0; padding: 0; border-spacing: 0; border-collapse: collapse;">
+                <table id="signatureTable" cellspacing="0" cellpadding="0" border="0" style="width: 420px; min-width: 420px; max-width: 420px; margin: 0; padding: 0; border-spacing: 0; border-collapse: collapse;">
                     <tr style="margin: 0; padding: 0;">
-                        <td width="80" style="width: 80px; vertical-align: middle; margin: 0; padding: 0;">
-                            <img src="https://pub-438c6735150a4c84b3dbe9887c92328b.r2.dev/sentosa-logo-square.png"
-                                 alt="Sentosa Real Estate"
+                        <td width="100" style="width: 100px; vertical-align: middle; margin: 0; padding: 0;">
+                            <img src="https://pub-438c6735150a4c84b3dbe9887c92328b.r2.dev/sentosa-logo-square.png" 
+                                 alt="Sentosa Real Estate" 
                                  title="Sentosa Real Estate"
-                                 width="80"
-                                 height="80"
-                                 style="width: 80px; height: 80px; display: block; margin: 0; padding: 0; -ms-interpolation-mode: bicubic; font-family: Arial, sans-serif; font-size: 14px; color: #0066cc; text-align: center;">
+                                 width="100" 
+                                 height="100"
+                                 style="width: 100px; height: 100px; display: block; margin: 0; padding: 0; -ms-interpolation-mode: bicubic;">
                         </td>
-                        <td width="1" style="width: 1px; padding: 0 10px; margin: 0;">
-                            <div style="width: 1px; height: 80px; background-color: #d1d1d1; margin: 0;"></div>
+                        <td width="1" style="width: 1px; padding: 0 30px; margin: 0;">
+                            <div style="width: 1px; height: 100px; background-color: #d1d1d1; margin: 0;"></div>
                         </td>
-                        <td width="240" style="width: 240px; vertical-align: middle; padding-left: 10px; margin: 0;">
-                            <div style="font-family: Arial, sans-serif; font-size: 11px; line-height: 13px; text-transform: uppercase; margin: 0; padding: 0;">
-                                <div id="previewName" style="font-weight: bold; margin-bottom: 4px;"></div>
-                                <div id="previewTitle" style="color: #666666; margin-bottom: 8px;"></div>
-                                <div style="margin-bottom: 4px;">
-                                    <strong>m.</strong> <span id="previewPhone"></span>
+                        <td width="280" style="width: 280px; vertical-align: middle; padding-left: 10px; margin: 0;">
+                            <div style="font-family: 'Poppins', Arial, sans-serif; margin: 0; padding: 0;">
+                                <!-- Bloc 1 : Nom et poste -->
+                                <div style="margin-bottom: 15px;">
+                                    <div id="previewName" style="font-size: 11px; font-weight: 600; letter-spacing: 0.3em; margin-bottom: 1px;"></div>
+                                    <div id="previewTitle" style="font-size: 9px; font-weight: 300; color: #666666; letter-spacing: 0.2em;"></div>
                                 </div>
-                                <div style="margin-bottom: 8px;">
-                                    <strong>a.</strong> 33 avenue de wagram - paris 17
+                                
+                                <!-- Bloc 2 : Téléphone et adresse -->
+                                <div style="margin-bottom: 15px;">
+                                    <div style="font-size: 9px; letter-spacing: 0.15em; margin-bottom: 1px;"><strong>M.</strong> <span id="previewPhone"></span></div>
+                                    <div style="font-size: 9px; letter-spacing: 0.15em;"><strong>A.</strong> 33 AVENUE DE WAGRAM - PARIS 17</div>
                                 </div>
+                                
+                                <!-- Bloc 3 : URL -->
                                 <div>
-                                    <a href="http://www.sentosa-re.com" style="color: #0066cc; text-decoration: none; font-weight: 600;">www.sentosa-re.com</a>
+                                    <div style="font-size: 9px; font-weight: 600; letter-spacing: 0.2em;">
+                                        <a href="http://www.sentosa-re.com" style="color: #000000; text-decoration: none;">WWW.SENTOSA-RE.COM</a>
+                                    </div>
                                 </div>
                             </div>
                         </td>
@@ -301,10 +308,10 @@
             event.preventDefault();
             
             // Récupérer les valeurs du formulaire
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
+            const firstName = document.getElementById('firstName').value.toUpperCase();
+            const lastName = document.getElementById('lastName').value.toUpperCase();
             const fullName = `${firstName} ${lastName}`;
-            const title = document.getElementById('title').value.toLowerCase();
+            const title = document.getElementById('title').value.toUpperCase();
             const phone = document.getElementById('phone').value;
             
             // Mettre à jour l'aperçu
