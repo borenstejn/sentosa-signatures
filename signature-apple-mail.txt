@@ -1,0 +1,47 @@
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html;
+    charset=us-ascii
+Message-Id: <ED687E83-361B-461F-ABA1-5BC83CFE6639>
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3818.100.11.1.3\))
+
+<html>
+<body>
+<table cellspacing="0" cellpadding="0" border="0" style="width: 420px; min-width: 420px; max-width: 420px; margin: 0; padding: 0; border-spacing: 0; border-collapse: collapse;">
+    <tr style="margin: 0; padding: 0;">
+        <td width="100" style="width: 100px; vertical-align: middle; margin: 0; padding: 0;">
+            <img src="https://pub-438c6735150a4c84b3dbe9887c92328b.r2.dev/sentosa-logo-square.png" 
+                 alt="Sentosa Real Estate" 
+                 title="Sentosa Real Estate"
+                 width="100" 
+                 height="100"
+                 style="width: 100px; height: 100px; display: block; margin: 0; padding: 0; -ms-interpolation-mode: bicubic;">
+        </td>
+        <td width="1" style="width: 1px; padding: 0 30px; margin: 0;">
+            <div style="width: 1px; height: 100px; background-color: #d1d1d1; margin: 0;"></div>
+        </td>
+        <td width="280" style="width: 280px; vertical-align: middle; padding-left: 10px; margin: 0;">
+            <div style="font-family: 'Poppins', Arial, sans-serif; margin: 0; padding: 0;">
+                <!-- Bloc 1 : Nom et poste -->
+                <div style="margin-bottom: 15px;">
+                    <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.3em; margin-bottom: 1px;">NICOLAS BOKSENBAUM</div>
+                    <div style="font-size: 9px; font-weight: 300; color: #666666; letter-spacing: 0.2em;">_PARTNER</div>
+                </div>
+                
+                <!-- Bloc 2 : Téléphone et adresse -->
+                <div style="margin-bottom: 15px;">
+                    <div style="font-size: 9px; letter-spacing: 0.15em; margin-bottom: 1px;"><strong>M.</strong> +33 6 89 05 96 39</div>
+                    <div style="font-size: 9px; letter-spacing: 0.15em;"><strong>A.</strong> 33 AVENUE DE WAGRAM - PARIS 17</div>
+                </div>
+                
+                <!-- Bloc 3 : URL -->
+                <div>
+                    <div style="font-size: 9px; font-weight: 600; letter-spacing: 0.2em;">
+                        <a href="http://www.sentosa-re.com" style="color: #000000; text-decoration: none;">WWW.SENTOSA-RE.COM</a>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

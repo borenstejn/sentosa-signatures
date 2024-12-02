@@ -8,6 +8,7 @@
     <title>Générateur de Signatures</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
         body {
             margin: 20px;
@@ -187,6 +188,11 @@
         .hidden {
             display: none !important;
         }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
@@ -267,10 +273,13 @@
                         </tr>
                     </table>
                 </div>
-                <button class="copy-button" onclick="copySignature('signatureTable-gregoire')">Copier la signature de Grégoire</button>
+                <div class="button-group">
+                    <button class="copy-button" onclick="copySignature('signatureTable-gregoire')">Copier la signature de Grégoire</button>
+                    <button class="copy-button" onclick="downloadSignatureImage('signature-gregoire')">Télécharger l'image</button>
+                </div>
             </div>
 
-            <!-- Nicolas Boksenbaum -->
+            <!-- Version Gmail -->
             <div class="signature-block">
                 <div id="signature-nicolas" class="signature">
                     <table id="signatureTable-nicolas" cellspacing="0" cellpadding="0" border="0" style="width: 420px; min-width: 420px; max-width: 420px; margin: 0; padding: 0; border-spacing: 0; border-collapse: collapse;">
@@ -311,7 +320,95 @@
                         </tr>
                     </table>
                 </div>
-                <button class="copy-button" onclick="copySignature('signatureTable-nicolas')">Copier la signature de Nicolas</button>
+                <div class="button-group">
+                    <button class="copy-button" onclick="copySignature('signatureTable-nicolas')">Copier pour Gmail</button>
+                </div>
+            </div>
+
+            <!-- Version Outlook -->
+            <div class="signature-block">
+                <div id="signature-nicolas-outlook" class="signature">
+                    <table id="signatureTable-nicolas-outlook" cellspacing="0" cellpadding="0" style="text-align: left; width: 420px; max-width: 420px; min-width: 420px; color: rgb(0, 0, 0); box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;">
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left; vertical-align: middle; width: 100px;">
+                                    <span style="font-family: Arial, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+                                        <img src="https://pub-438c6735150a4c84b3dbe9887c92328b.r2.dev/sentosa-logo-square.png" 
+                                             alt="Sentosa Real Estate" 
+                                             title="Sentosa Real Estate" 
+                                             width="100" 
+                                             height="100" 
+                                             style="width: 100px; height: 100px; margin: 0px; display: block;">
+                                    </span>
+                                </td>
+                                <td style="text-align: left; width: 60px;">
+                                    <table cellspacing="0" cellpadding="0" style="text-align: left; width: 59.9297px; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;">
+                                        <tbody>
+                                            <tr>
+                                                <td align="center" style="padding-right: 29px; padding-left: 29px;">
+                                                    <table cellspacing="0" cellpadding="0" style="width: 1px; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="line-height: 1px; background-color: rgb(209, 209, 209); width: 1px; height: 100px;">
+                                                                    <div style="line-height: 1px; font-family: Arial, sans-serif; font-size: 1px; color: rgb(0, 0, 0);">&nbsp;</div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style="text-align: left; padding-left: 10px; vertical-align: middle; width: 260px;">
+                                    <table cellspacing="0" cellpadding="0" style="text-align: left; width: 250.07px; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="text-align: left; padding-bottom: 1px;">
+                                                    <div style="text-align: left; margin-bottom: 2px; font-family: Arial, sans-serif; font-size: 11px; color: rgb(0, 0, 0);">
+                                                        <span style="letter-spacing: 0.3em;"><b>NICOLAS BOKSENBAUM</b></span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left; padding-bottom: 15px;">
+                                                    <div style="text-align: left; letter-spacing: 0.2em; font-family: Arial, sans-serif; font-size: 9px; color: rgb(102, 102, 102);">
+                                                        <span style="letter-spacing: 0.2em;">_PARTNER</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left; padding-bottom: 1px;">
+                                                    <div style="text-align: left; letter-spacing: 0.2em; font-family: Arial, sans-serif; font-size: 9px; color: rgb(0, 0, 0);">
+                                                        <span style="letter-spacing: 0.2em;"><b>M.</b>&nbsp;+33 6 89 05 96 39</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left; padding-bottom: 15px;">
+                                                    <div style="text-align: left; letter-spacing: 0.2em; font-family: Arial, sans-serif; font-size: 9px; color: rgb(0, 0, 0);">
+                                                        <span style="letter-spacing: 0.2em;"><b>A.</b>&nbsp;33 AVENUE DE WAGRAM - PARIS 17</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <div style="text-align: left; letter-spacing: 0.2em; font-family: Arial, sans-serif; font-size: 9px; color: rgb(0, 0, 0);">
+                                                        <span style="letter-spacing: 0.2em;"><b><a href="http://www.sentosa-re.com" style="color: rgb(0, 0, 0); text-decoration: none;">WWW.SENTOSA-RE.COM</a></b></span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br></div>
+                </div>
+                <div class="button-group">
+                    <button class="copy-button" onclick="copySignature('signatureTable-nicolas-outlook')">Copier pour Outlook</button>
+                </div>
             </div>
 
             <!-- Emmanuel de la Vigne -->
@@ -355,7 +452,10 @@
                         </tr>
                     </table>
                 </div>
-                <button class="copy-button" onclick="copySignature('signatureTable-emmanuel')">Copier la signature d'Emmanuel</button>
+                <div class="button-group">
+                    <button class="copy-button" onclick="copySignature('signatureTable-emmanuel')">Copier la signature d'Emmanuel</button>
+                    <button class="copy-button" onclick="downloadSignatureImage('signature-emmanuel')">Télécharger l'image</button>
+                </div>
             </div>
 
             <!-- Julien Lacroix -->
@@ -399,7 +499,10 @@
                         </tr>
                     </table>
                 </div>
-                <button class="copy-button" onclick="copySignature('signatureTable-julien')">Copier la signature de Julien</button>
+                <div class="button-group">
+                    <button class="copy-button" onclick="copySignature('signatureTable-julien')">Copier la signature de Julien</button>
+                    <button class="copy-button" onclick="downloadSignatureImage('signature-julien')">Télécharger l'image</button>
+                </div>
             </div>
 
             <!-- Adrien Viaud -->
@@ -443,7 +546,10 @@
                         </tr>
                     </table>
                 </div>
-                <button class="copy-button" onclick="copySignature('signatureTable-adrien')">Copier la signature d'Adrien</button>
+                <div class="button-group">
+                    <button class="copy-button" onclick="copySignature('signatureTable-adrien')">Copier la signature d'Adrien</button>
+                    <button class="copy-button" onclick="downloadSignatureImage('signature-adrien')">Télécharger l'image</button>
+                </div>
             </div>
         </div>
     </div>
@@ -489,6 +595,94 @@
                 checkPassword();
             }
         });
+
+        // Variable globale pour suivre l'état de chargement
+        let imagesLoaded = false;
+
+        // Précharger l'image en base64
+        const logoImage = new Image();
+        logoImage.src = 'https://pub-438c6735150a4c84b3dbe9887c92328b.r2.dev/sentosa-logo-square.png';
+        
+        // Stocker l'image en base64 une fois chargée
+        let logoBase64;
+        logoImage.onload = function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = logoImage.width;
+            canvas.height = logoImage.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(logoImage, 0, 0);
+            logoBase64 = canvas.toDataURL('image/png');
+            
+            // Remplacer toutes les sources d'image par la version base64
+            document.querySelectorAll('.signature img').forEach(img => {
+                img.src = logoBase64;
+                img.onload = () => {
+                    imagesLoaded = true;
+                };
+            });
+        };
+
+        async function downloadSignatureImage(elementId) {
+            if (!imagesLoaded) {
+                alert('Veuillez patienter pendant le chargement des images...');
+                return;
+            }
+
+            const element = document.getElementById(elementId);
+            
+            try {
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    backgroundColor: null,
+                    logging: true, // Activé pour le débogage
+                    onclone: function(clonedDoc) {
+                        // Vérifier que les images sont bien présentes dans le clone
+                        const clonedImages = clonedDoc.querySelectorAll('.signature img');
+                        clonedImages.forEach(img => {
+                            img.src = logoBase64;
+                        });
+                    }
+                });
+                
+                canvas.toBlob(function(blob) {
+                    const link = document.createElement('a');
+                    link.download = 'signature-sentosa.png';
+                    link.href = URL.createObjectURL(blob);
+                    link.click();
+                    URL.revokeObjectURL(link.href);
+                }, 'image/png');
+                
+            } catch (error) {
+                console.error('Erreur lors de la création de l\'image:', error);
+                alert('Erreur lors de la création de l\'image');
+            }
+        }
+
+        async function copySignatureAsImage(elementId) {
+            try {
+                const element = document.getElementById(elementId);
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    backgroundColor: null,
+                    logging: false
+                });
+                
+                canvas.toBlob(async function(blob) {
+                    try {
+                        const item = new ClipboardItem({ "image/png": blob });
+                        await navigator.clipboard.write([item]);
+                        alert('Image copiée avec succès !');
+                    } catch (err) {
+                        console.error('Erreur lors de la copie dans le presse-papier:', err);
+                        alert('Erreur lors de la copie de l\'image');
+                    }
+                }, 'image/png');
+                
+            } catch (error) {
+                console.error('Erreur lors de la création de l\'image:', error);
+                alert('Erreur lors de la création de l\'image');
+            }
+        }
     </script>
 </body>
 </html>
