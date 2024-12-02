@@ -174,6 +174,19 @@
         .hidden {
             display: none !important;
         }
+
+        .signature-block {
+            margin-bottom: 40px;
+        }
+
+        .signature-block h3 {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .signature {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -220,61 +233,136 @@
         </div>
 
         <div id="previewContainer" class="preview-container">
-            <h2>Aperçu de la signature</h2>
-            <div id="signature" class="signature">
-                <table id="signatureTable" cellspacing="0" cellpadding="0" border="0" style="width: 420px; min-width: 420px; max-width: 420px; margin: 0; padding: 0; border-spacing: 0; border-collapse: collapse;">
-                    <tr style="margin: 0; padding: 0;">
-                        <td width="100" style="width: 100px; vertical-align: middle; margin: 0; padding: 0;">
-                            <img src="https://pub-438c6735150a4c84b3dbe9887c92328b.r2.dev/sentosa-logo-square.png" 
-                                 alt="Sentosa Real Estate" 
-                                 title="Sentosa Real Estate"
-                                 width="100" 
-                                 height="100"
-                                 style="width: 100px; height: 100px; display: block; margin: 0; padding: 0; -ms-interpolation-mode: bicubic;">
-                        </td>
-                        <td width="1" style="width: 1px; padding: 0 30px; margin: 0;">
-                            <div style="width: 1px; height: 100px; background-color: #d1d1d1; margin: 0;"></div>
-                        </td>
-                        <td width="280" style="width: 280px; vertical-align: middle; padding-left: 10px; margin: 0;">
-                            <div style="font-family: 'Poppins', Arial, sans-serif; margin: 0; padding: 0;">
-                                <!-- Bloc 1 : Nom et poste -->
-                                <div style="margin-bottom: 15px;">
-                                    <div id="previewName" style="font-size: 11px; font-weight: 600; letter-spacing: 0.3em; margin-bottom: 1px;"></div>
-                                    <div id="previewTitle" style="font-size: 9px; font-weight: 300; color: #666666; letter-spacing: 0.2em;"></div>
-                                </div>
-                                
-                                <!-- Bloc 2 : Téléphone et adresse -->
-                                <div style="margin-bottom: 15px;">
-                                    <div style="font-size: 9px; letter-spacing: 0.15em; margin-bottom: 1px;"><strong>M.</strong> <span id="previewPhone"></span></div>
-                                    <div style="font-size: 9px; letter-spacing: 0.15em;"><strong>A.</strong> 33 AVENUE DE WAGRAM - PARIS 17</div>
-                                </div>
-                                
-                                <!-- Bloc 3 : URL -->
-                                <div>
-                                    <div style="font-size: 9px; font-weight: 600; letter-spacing: 0.2em;">
-                                        <a href="http://www.sentosa-re.com" style="color: #000000; text-decoration: none;">WWW.SENTOSA-RE.COM</a>
+            <h2>Aperçu des signatures</h2>
+            
+            <!-- Version Gmail -->
+            <div class="signature-block">
+                <h3>Version Gmail</h3>
+                <div id="signature" class="signature">
+                    <table id="signatureTable" cellspacing="0" cellpadding="0" border="0" style="width: 420px; min-width: 420px; max-width: 420px; margin: 0; padding: 0; border-spacing: 0; border-collapse: collapse;">
+                        <tr style="margin: 0; padding: 0;">
+                            <td width="100" style="width: 100px; vertical-align: middle; margin: 0; padding: 0;">
+                                <img src="https://pub-438c6735150a4c84b3dbe9887c92328b.r2.dev/sentosa-logo-square.png" 
+                                     alt="Sentosa Real Estate" 
+                                     title="Sentosa Real Estate"
+                                     width="100" 
+                                     height="100"
+                                     style="width: 100px; height: 100px; display: block; margin: 0; padding: 0; -ms-interpolation-mode: bicubic;">
+                            </td>
+                            <td width="1" style="width: 1px; padding: 0 30px; margin: 0;">
+                                <div style="width: 1px; height: 100px; background-color: #d1d1d1; margin: 0;"></div>
+                            </td>
+                            <td width="280" style="width: 280px; vertical-align: middle; padding-left: 10px; margin: 0;">
+                                <div style="font-family: 'Poppins', Arial, sans-serif; margin: 0; padding: 0;">
+                                    <!-- Bloc 1 : Nom et poste -->
+                                    <div style="margin-bottom: 15px;">
+                                        <div id="previewName" style="font-size: 11px; font-weight: 600; letter-spacing: 0.3em; margin-bottom: 1px;"></div>
+                                        <div id="previewTitle" style="font-size: 9px; font-weight: 300; color: #666666; letter-spacing: 0.2em;"></div>
+                                    </div>
+                                    
+                                    <!-- Bloc 2 : Téléphone et adresse -->
+                                    <div style="margin-bottom: 15px;">
+                                        <div style="font-size: 9px; letter-spacing: 0.15em; margin-bottom: 1px;"><strong>M.</strong> <span id="previewPhone"></span></div>
+                                        <div style="font-size: 9px; letter-spacing: 0.15em;"><strong>A.</strong> 33 AVENUE DE WAGRAM - PARIS 17</div>
+                                    </div>
+                                    
+                                    <!-- Bloc 3 : URL -->
+                                    <div>
+                                        <div style="font-size: 9px; font-weight: 600; letter-spacing: 0.2em;">
+                                            <a href="http://www.sentosa-re.com" style="color: #000000; text-decoration: none;">WWW.SENTOSA-RE.COM</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <button class="copy-button" onclick="copySignature('signatureTable')">Copier pour Gmail</button>
             </div>
-            <button class="copy-button" onclick="copySignature()">Copier la signature</button>
-            
-            <div class="instructions" style="margin-top: 30px;">
-                <h2>Mode d'emploi pour Gmail</h2>
-                <ol>
-                    <li>Cliquez sur le bouton "Copier la signature" ci-dessus</li>
-                    <li>Dans Gmail, cliquez sur l'icône ⚙️ (Paramètres) en haut à droite</li>
-                    <li>Sélectionnez "Voir tous les paramètres"</li>
-                    <li>Dans la section "Signature", cliquez sur "Créer une signature"</li>
-                    <li>Donnez un nom à votre signature (ex: "Signature Sentosa")</li>
-                    <li>Dans la zone de texte, faites un clic droit et sélectionnez "Coller"</li>
-                    <li>Dans la section "Valeurs par défaut de la signature", sélectionnez votre signature pour les nouveaux emails et les réponses</li>
-                    <li>Cochez la case "Insérer la signature avant le texte des messages précédents dans les réponses et supprimer la ligne "--" qui précède"</li>
-                    <li>Faites défiler jusqu'en bas et cliquez sur "Enregistrer les modifications"</li>
-                </ol>
+
+            <!-- Version Outlook -->
+            <div class="signature-block">
+                <h3>Version Outlook</h3>
+                <div id="signature-outlook" class="signature">
+                    <table id="signatureTable-outlook" cellspacing="0" cellpadding="0" style="text-align: left; width: 420px; max-width: 420px; min-width: 420px; color: rgb(0, 0, 0); box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;">
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left; vertical-align: middle; width: 100px;">
+                                    <span style="font-family: Arial, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+                                        <img src="https://pub-438c6735150a4c84b3dbe9887c92328b.r2.dev/sentosa-logo-square.png" 
+                                             alt="Sentosa Real Estate" 
+                                             title="Sentosa Real Estate" 
+                                             width="100" 
+                                             height="100" 
+                                             style="width: 100px; height: 100px; margin: 0px; display: block;">
+                                    </span>
+                                </td>
+                                <td style="text-align: left; width: 60px;">
+                                    <table cellspacing="0" cellpadding="0" style="text-align: left; width: 59.9297px; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;">
+                                        <tbody>
+                                            <tr>
+                                                <td align="center" style="padding-right: 29px; padding-left: 29px;">
+                                                    <table cellspacing="0" cellpadding="0" style="width: 1px; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="line-height: 1px; background-color: rgb(209, 209, 209); width: 1px; height: 100px;">
+                                                                    <div style="line-height: 1px; font-family: Arial, sans-serif; font-size: 1px; color: rgb(0, 0, 0);">&nbsp;</div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style="text-align: left; padding-left: 10px; vertical-align: middle; width: 260px;">
+                                    <table cellspacing="0" cellpadding="0" style="text-align: left; width: 250.07px; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="text-align: left; padding-bottom: 1px;">
+                                                    <div style="text-align: left; margin-bottom: 2px; font-family: Arial, sans-serif; font-size: 11px; color: rgb(0, 0, 0);">
+                                                        <span id="previewName-outlook" style="letter-spacing: 0.3em;"><b></b></span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left; padding-bottom: 15px;">
+                                                    <div style="text-align: left; letter-spacing: 0.2em; font-family: Arial, sans-serif; font-size: 9px; color: rgb(102, 102, 102);">
+                                                        <span id="previewTitle-outlook" style="letter-spacing: 0.2em;"></span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left; padding-bottom: 1px;">
+                                                    <div style="text-align: left; letter-spacing: 0.2em; font-family: Arial, sans-serif; font-size: 9px; color: rgb(0, 0, 0);">
+                                                        <span style="letter-spacing: 0.2em;"><b>M.</b>&nbsp;<span id="previewPhone-outlook"></span></span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left; padding-bottom: 15px;">
+                                                    <div style="text-align: left; letter-spacing: 0.2em; font-family: Arial, sans-serif; font-size: 9px; color: rgb(0, 0, 0);">
+                                                        <span style="letter-spacing: 0.2em;"><b>A.</b>&nbsp;33 AVENUE DE WAGRAM - PARIS 17</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <div style="text-align: left; letter-spacing: 0.2em; font-family: Arial, sans-serif; font-size: 9px; color: rgb(0, 0, 0);">
+                                                        <span style="letter-spacing: 0.2em;"><b><a href="http://www.sentosa-re.com" style="color: rgb(0, 0, 0); text-decoration: none;">WWW.SENTOSA-RE.COM</a></b></span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br></div>
+                </div>
+                <button class="copy-button" onclick="copySignature('signatureTable-outlook')">Copier pour Outlook</button>
             </div>
         </div>
     </div>
@@ -314,17 +402,22 @@
             const title = document.getElementById('title').value.toUpperCase();
             const phone = document.getElementById('phone').value;
             
-            // Mettre à jour l'aperçu
+            // Mettre à jour l'aperçu Gmail
             document.getElementById('previewName').textContent = fullName;
             document.getElementById('previewTitle').textContent = title;
             document.getElementById('previewPhone').textContent = phone;
+            
+            // Mettre à jour l'aperçu Outlook
+            document.getElementById('previewName-outlook').innerHTML = `<b>${fullName}</b>`;
+            document.getElementById('previewTitle-outlook').textContent = title;
+            document.getElementById('previewPhone-outlook').textContent = phone;
             
             // Afficher le conteneur de l'aperçu
             document.getElementById('previewContainer').style.display = 'block';
         }
 
-        function copySignature() {
-            const signatureElement = document.getElementById('signatureTable');
+        function copySignature(signatureId) {
+            const signatureElement = document.getElementById(signatureId);
             const range = document.createRange();
             range.selectNode(signatureElement);
             window.getSelection().removeAllRanges();
