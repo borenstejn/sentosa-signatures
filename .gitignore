@@ -1,0 +1,8 @@
+.DS_Store
+.next/
+node_modules/
+.venv/
+venv/
+__pycache__/
+.playwright-mcp/
+*.log
